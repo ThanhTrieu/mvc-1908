@@ -2,6 +2,11 @@
 	namespace App\controllers;
 	// controller goc de cac controller khac ke thua vao
 	
+	// khong duoc phep truy cap truc tiep !
+	if(!defined('ROOT_APP_PATH')){
+		die('Can not access this module');
+	}
+	
 	class BaseController
 	{
 		public function __call($name, $arguments)

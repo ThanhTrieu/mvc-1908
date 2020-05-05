@@ -29,6 +29,19 @@
 		
 		protected function loadView($path, $data = [])
 		{
+			extract($data);
+			// extract : giup chuyen key cua mang data thanh 1 bien hien thi o ngoai view
+//			$data = [];
+//			$data['a'] = 10;
+//			$data['b'] = 10;
+			// luc nay muon hien thi du lieu 10 -10 chi can goi
+//			$a == 10 || $b == 10
+//			$data['lstProducts'] = [
+//				[],
+//				[],
+//				[]
+//			];
+//			$lstProducts;
 			//$path : duong dan cua view : luon luon phai nam trong thu muc views
 			require "App/views/{$path}.php";
 		}

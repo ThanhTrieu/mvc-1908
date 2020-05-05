@@ -12,6 +12,9 @@
 	{
 		public function index()
 		{
+			$name = $_SESSION['username'] ?? '';
+			$data = [];
+			$data['name'] = $name;
 			// xu ly du lieu o day
 			
 			// load header
@@ -22,7 +25,7 @@
 			$this->loadHeader($header);
 			
 			// load content
-			$this->loadView('home/index_view');
+			$this->loadView('home/index_view', $data);
 			
 			// load footer
 			$this->loadFooter();

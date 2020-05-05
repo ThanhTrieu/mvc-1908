@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 // day se la noi tiep nhan cac request tu phia client va dinh tuyen - dieu huong cac request do
 // duong link truy cap vao web : index.php?c=&m=&p
 // c: ten cua controller

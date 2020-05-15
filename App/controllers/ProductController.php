@@ -27,6 +27,11 @@
 			// xu ly du lieu
 			$data = [];
 			$products = $this->db->getAllDataProduct();
+			
+//			echo "<pre>";
+//			print_r($products);
+//			die;
+			
 			$data['lstProducts'] = $products;
 			$data['name'] = 'Danh sach san pham';
 			// day ca mang data ra ngoai view

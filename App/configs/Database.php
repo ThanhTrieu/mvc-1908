@@ -15,9 +15,26 @@
 			$this->connection();
 		}
 		
-		protected function connection()
+		private function connection()
 		{
-			$this->db = true;
-			return $this->db;
+			try {
+				$this->db = new \PDO('mysql:host=localhost;dbname=shoes;charset=UTF8', 'root', '');
+				return $this->db;
+			} catch (PDOException $e) {
+				print "Error!: " . $e->getMessage() . "<br/>";
+				die();
+			}
+		}
+		
+		private function closeConnection()
+		{
+			// ngat ket noi den db
+			$this->db = null;
+		}
+		
+		function __destruct()
+		{
+			// TODO: Implement __destruct() method.
+			$this->closeConnection();
 		}
 	}

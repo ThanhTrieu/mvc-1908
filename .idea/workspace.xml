@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82e428e1-32c1-41bf-8dd5-a76870a8434b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/configs/Database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/configs/constant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/controllers/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/models/LoginModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/models/ProductModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/views/login/index_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/configs/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/configs/Database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/views/home/index_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/views/home/index_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/views/partials/header_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/views/partials/header_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/views/product/index_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/views/product/index_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/models/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/models/ProductModel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +83,12 @@
       <workItem from="1584354360281" duration="599000" />
       <workItem from="1584428178350" duration="3000" />
       <workItem from="1585307377733" duration="612000" />
-      <workItem from="1588662536467" duration="12182000" />
+      <workItem from="1588662536467" duration="12853000" />
+      <workItem from="1588736548078" duration="1801000" />
+      <workItem from="1588937132601" duration="777000" />
+      <workItem from="1588957212520" duration="23000" />
+      <workItem from="1589193127947" duration="14000" />
+      <workItem from="1589550080469" duration="2715000" />
     </task>
     <servers />
   </component>
@@ -111,10 +105,11 @@
     </state>
     <state x="586" y="375" key="NewPhpFileDialog/0.23.1440.813@0.23.1440.813" timestamp="1588686028527" />
     <state x="781" y="453" key="NewPhpFileDialog/0.23.1920.993@0.23.1920.993" timestamp="1583503796567" />
-    <state x="352" y="114" key="SettingsEditor" timestamp="1588678056027">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state x="352" y="122" key="SettingsEditor" timestamp="1589562564780">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
-    <state x="352" y="114" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1588678056027" />
-    <state x="469" y="158" key="SettingsEditor/0.23.1920.993@0.23.1920.993" timestamp="1583496209061" />
+    <state x="352" y="114" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1588957231106" />
+    <state x="352" y="122" key="SettingsEditor/0.23.1440.821@0.23.1440.821" timestamp="1589562564780" />
+    <state x="469" y="158" key="SettingsEditor/0.23.1920.993@0.23.1920.993" timestamp="1589550110972" />
   </component>
 </project>

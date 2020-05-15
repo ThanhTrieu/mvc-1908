@@ -5,6 +5,7 @@
 		die('Can not access this module');
 	}
 	use App\configs\Database;
+	use \PDO;
 	
 	class ProductModel extends Database
 	{
@@ -15,28 +16,25 @@
 		
 		public function getAllDataProduct()
 		{
-			// gia su ket noi dc toi db thi moi get du lieu
-			if($this->db){
-				return [
-					[
-						'id' => 1,
-						'name' => 'Nokia',
-						'price' => 10000,
-						'image' => 'nokia.jpg'
-					],
-					[
-						'id' => 2,
-						'name' => 'Samsung',
-						'price' => 20000,
-						'image' => 'samsung.jpg'
-					],
-					[
-						'id' => 3,
-						'name' => 'Iphone',
-						'price' => 30000,
-						'image' => 'iphone.jpg'
-					]
-				];
+			// cach viet pdo get data tu db
+			$data = [];
+			$sql = "SELECT * FROM `products`";
+			// chuan bi thuc thi cau lenh sql
+			//  Prepares a statement for execution and returns a statement object
+			$stmt = $this->db->prepare($sql);
+			if($stmt){
+				// thuc thi lenh
+				if($stmt->execute()){
+					// kiem tra xem cos du lieu nao dc tra ve
+					if($stmt->rowCount() > 0){
+						// gan du lieu vao mang data
+						$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+					}
+				}
+				// neu con cac lenh khac thi dc phep thuc thi tiep
+				$stmt->closeCursor();
 			}
+			
+			return $data;
 		}
 	}

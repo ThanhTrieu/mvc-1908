@@ -27,6 +27,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="?c=login">Login</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?c=login&m=logout">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?c=color">Color</a>
+            </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

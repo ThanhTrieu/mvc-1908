@@ -5,6 +5,7 @@
 		die('Can not access this module');
 	}
 	use App\configs\Database;
+	use \PDO;
 	
 	class LoginModel extends Database
 	{
@@ -15,14 +16,23 @@
 		
 		public function checkLoginUser($username, $password)
 		{
-			// gia su kiem tra ket noi thanh cong db
-			if($this->db){
-				// do chua hoc mysql nen fix cung du lieu
-				if($username === 'admin' && $password === '123'){
-					return true;
+			$data = [];
+			$sql = "SELECT * FROM `admins` AS a WHERE a.`username` = :user AND a.`password` = :pass LIMIT 1";
+			$stmt = $this->db->prepare($sql);
+			if($stmt){
+				// kiem tra - validate tham so truyen vao cau lenh sql
+				$stmt->bindParam(':user', $username, PDO::PARAM_STR);
+				$stmt->bindParam(':pass', $password, PDO::PARAM_STR);
+				// thuc thi cau lenh sql
+				if($stmt->execute()){
+					// kiem tra xem co du lieu tra ve ko ?
+					if($stmt->rowCount() > 0){
+						// tra ve 1 dong du lieu
+						$data = $stmt->fetch(PDO::FETCH_ASSOC);
+					}
 				}
-				return false;
+				$stmt->closeCursor();
 			}
-			return false;
+			return $data;
 		}
 	}

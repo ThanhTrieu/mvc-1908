@@ -47,9 +47,12 @@
 				
 				if(!empty($user) && !empty($pass)) {
 					$checkLogin = $this->db->checkLoginUser($user, $pass);
+					
 					if ($checkLogin) {
-						$_SESSION['username'] = $user;
-						
+						$_SESSION['username'] = $checkLogin['username'];
+						$_SESSION['idUser'] = $checkLogin['id'];
+						$_SESSION['email'] = $checkLogin['email'];
+						$_SESSION['role'] = $checkLogin['role'];
 						header("Location: ?c=home");
 					} else {
 						header("Location: ?c=login&m=index&state=err");
@@ -58,5 +61,16 @@
 					header("Location: ?c=login&m=index&state=empty");
 				}
 			}
+		}
+		public function logout()
+		{
+			if(isset($_SESSION['idUser'])){
+				// xoa het cac session
+				unset($_SESSION['idUser']);
+				unset($_SESSION['username']);
+				unset($_SESSION['email']);
+				unset($_SESSION['role']);
+			}
+			header("Location: ?c=login");
 		}
 	}

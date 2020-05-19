@@ -5,6 +5,7 @@
 	if(!defined('ROOT_APP_PATH')){
 		die('Can not access this module');
 	}
+	use \PDO;
 	
 	class Database
 	{
@@ -18,7 +19,10 @@
 		private function connection()
 		{
 			try {
-				$this->db = new \PDO('mysql:host=localhost;dbname=shoes;charset=UTF8', 'root', '');
+				$this->db = new PDO('mysql:host=localhost;dbname=shoes;charset=UTF8', 'root', '');
+				$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+				
 				return $this->db;
 			} catch (PDOException $e) {
 				print "Error!: " . $e->getMessage() . "<br/>";

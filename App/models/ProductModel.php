@@ -37,4 +37,54 @@
 			
 			return $data;
 		}
+		
+		public function getAllDataProductByKeyword($key = '')
+		{
+			$keyword = "%{$key}%";
+			$data = [];
+			$sql = "SELECT p.`id` AS `product_id`, p.`name` AS `name_product`, p.`image`, p.`price`, c.`name` AS `name_cate`, b.`name` AS `name_brand`
+					FROM `products` AS p
+					INNER JOIN `categories` AS c ON p.`cate_id` = c.`id`
+					INNER JOIN `brands` AS b ON p.`brand_id` = b.`id`
+					WHERE p.`name` LIKE :keyword1 OR p.`price` LIKE :keyword2 OR b.`name` LIKE :keyword3";
+			$stmt = $this->db->prepare($sql);
+			if($stmt){
+				$stmt->bindParam(':keyword1', $keyword, PDO::PARAM_STR);
+				$stmt->bindParam(':keyword2', $keyword, PDO::PARAM_STR);
+				$stmt->bindParam(':keyword3', $keyword, PDO::PARAM_STR);
+				if($stmt->execute()){
+					if($stmt->rowCount() > 0){
+						$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+					}
+				}
+				$stmt->closeCursor();
+			}
+			return $data;
+		}
+		
+		public function getAllDataProductByPage($start, $limited, $key = '')
+		{
+			$keyword = "%{$key}%";
+			$data = [];
+			$sql = "SELECT p.`id` AS `product_id`, p.`name` AS `name_product`, p.`image`, p.`price`, c.`name` AS `name_cate`, b.`name` AS `name_brand`
+					FROM `products` AS p
+					INNER JOIN `categories` AS c ON p.`cate_id` = c.`id`
+					INNER JOIN `brands` AS b ON p.`brand_id` = b.`id`
+					WHERE p.`name` LIKE :keyword1 OR p.`price` LIKE :keyword2 OR b.`name` LIKE :keyword3 LIMIT :start,:limited";
+			$stmt = $this->db->prepare($sql);
+			if($stmt){
+				$stmt->bindParam(':keyword1', $keyword, PDO::PARAM_STR);
+				$stmt->bindParam(':keyword2', $keyword, PDO::PARAM_STR);
+				$stmt->bindParam(':keyword3', $keyword, PDO::PARAM_STR);
+				$stmt->bindParam(':start', $start, PDO::PARAM_INT);
+				$stmt->bindParam(':limited', $limited, PDO::PARAM_INT);
+				if($stmt->execute()){
+					if($stmt->rowCount() > 0){
+						$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+					}
+				}
+				$stmt->closeCursor();
+			}
+			return $data;
+		}
 	}

@@ -6,7 +6,6 @@
 		die('Can not access this module');
 	}
 	use App\configs\Database;
-	use Cassandra\Date;
 	use \PDO;
 	
 	class ColorModel extends Database

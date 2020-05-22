@@ -19,6 +19,7 @@
 		{
 			$title = $header['title'] ?? '';
 			$content = $header['content'] ?? '';
+			$keywordSearch = $header['keyword_search'] ?? '';
 			require 'App/views/partials/header_view.php';
 		}
 		

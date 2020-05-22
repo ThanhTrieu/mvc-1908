@@ -8,6 +8,7 @@
 	
 	use App\controllers\BaseController;
 	use App\models\ProductModel;
+	use App\libs\Pagination;
 	
 	class ProductController extends BaseController
 	{
@@ -47,6 +48,41 @@
 			// bien $data duoc day ra ngoai view
 			$this->loadView('product/index_view', $data);
 			
+			// load footer
+			$this->loadFooter();
+		}
+		
+		public function search()
+		{
+			$data = [];
+			$keyword = $_GET['q'] ?? '';
+			$page = $_GET['page'] ?? '';
+			$page = is_numeric($page) ? $page : 1;
+			
+			$products = $this->db->getAllDataProductByKeyword($keyword);
+			$arrLink = [
+				'c' => 'product',
+				'm' => 'search',
+				'q' => $keyword,
+				'page' => '{page}'
+			];
+			
+			$strLink = Pagination::createLink($arrLink);
+			$paginate = Pagination::paginate($strLink, $page,LIMITED_PAGE, count($products), $keyword);
+			
+			$lstProduct = $this->db->getAllDataProductByPage($paginate['start'], LIMITED_PAGE, $keyword);
+			$data['paginate'] = $paginate['paginate'];
+			$data['lstProduct'] = $lstProduct;
+			
+			// load header
+			$header = [
+				'title' => 'Search product',
+				'content' => 'This Search page product',
+				'keyword_search' => $keyword
+			];
+			$this->loadHeader($header);
+			
+			$this->loadView('product/search_view',$data);
 			// load footer
 			$this->loadFooter();
 		}

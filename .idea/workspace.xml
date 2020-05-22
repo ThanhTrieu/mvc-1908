@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82e428e1-32c1-41bf-8dd5-a76870a8434b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/controllers/ColorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/models/ColorModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/libs/Pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/views/product/search_view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/search-product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/configs/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/configs/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/models/LoginModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/models/LoginModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/configs/constant.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/configs/constant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/models/ColorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/models/ColorModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/models/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/models/ProductModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/views/partials/footer_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/views/partials/footer_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/views/partials/header_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/views/partials/header_view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +54,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -93,7 +97,10 @@
       <workItem from="1589193127947" duration="14000" />
       <workItem from="1589550080469" duration="3945000" />
       <workItem from="1589618654433" duration="12000" />
-      <workItem from="1589887545461" duration="10771000" />
+      <workItem from="1589887545461" duration="11717000" />
+      <workItem from="1589946695858" duration="7000" />
+      <workItem from="1590138969813" duration="1291000" />
+      <workItem from="1590141450697" duration="10072000" />
     </task>
     <servers />
   </component>
@@ -105,16 +112,18 @@
       <screen x="0" y="23" width="1920" height="993" />
     </state>
     <state x="698" y="283" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.993@0.23.1920.993" timestamp="1583500582467" />
-    <state x="781" y="453" key="NewPhpFileDialog" timestamp="1589892803370">
-      <screen x="0" y="23" width="1920" height="993" />
+    <state x="586" y="379" key="NewPhpFileDialog" timestamp="1590151298671">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="586" y="375" key="NewPhpFileDialog/0.23.1440.813@0.23.1440.813" timestamp="1588686028527" />
+    <state x="586" y="379" key="NewPhpFileDialog/0.23.1440.821@0.23.1440.821" timestamp="1590151298671" />
     <state x="781" y="453" key="NewPhpFileDialog/0.23.1920.993@0.23.1920.993" timestamp="1589892803370" />
-    <state x="352" y="123" key="SettingsEditor" timestamp="1589902184831">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state x="352" y="122" key="SettingsEditor" timestamp="1590150339031">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="352" y="114" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1588957231106" />
-    <state x="352" y="122" key="SettingsEditor/0.23.1440.821@0.23.1440.821" timestamp="1589562564780" />
+    <state x="160" y="105" key="SettingsEditor/0.23.1440.816@0.23.1440.816" timestamp="1590146941606" />
+    <state x="352" y="122" key="SettingsEditor/0.23.1440.821@0.23.1440.821" timestamp="1590150339031" />
     <state x="352" y="123" key="SettingsEditor/0.23.1440.822@0.23.1440.822" timestamp="1589902184831" />
     <state x="469" y="158" key="SettingsEditor/0.23.1920.993@0.23.1920.993" timestamp="1589887565241" />
   </component>
